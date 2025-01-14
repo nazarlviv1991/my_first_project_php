@@ -68,7 +68,7 @@ if (!file_exists("bd.txt")) {
             <h4>Зареєстровано користувачів на сайті - <?= $kilkist ?> </h4>
             <?php
             foreach ($usersBd as $user) :
-            ?> <h4> <?php echo $user["login"] . " - " . $user["password"] ?> </h4>
+            ?> <h4> <?php echo htmlspecialchars($user["login"]) . " - " . htmlspecialchars($user["password"]) ?> </h4>
             <?php endforeach; ?>
         <?php endif; ?>
         <hr>

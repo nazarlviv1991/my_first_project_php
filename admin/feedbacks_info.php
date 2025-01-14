@@ -55,8 +55,8 @@ if (!file_exists("feedbacks.txt")) {
 
                 $parts = explode("]", trim($line), 3);
             ?>
-                <h4> <?php echo substr($parts[0], 1) . " -- " . substr($parts[1], 2) ?> </h4>
-                <h4><pre><?= substr($parts[2], 2) ?></pre></h4>
+                <h4> <?php echo substr($parts[0], 1) . " -- " . htmlspecialchars(substr($parts[1], 2)) ?> </h4>
+                <h4><pre><?= htmlspecialchars(substr($parts[2], 2)) ?></pre></h4>
                 <?php if ($key < $kilkist - 1) : ?>
                     <hr>
                 <?php endif; ?>

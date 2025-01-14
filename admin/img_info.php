@@ -52,10 +52,10 @@ if (!file_exists("img_info.txt")) {
 
                 $parts = explode("] ", $line, 3);
             ?>
-                <h4> <?php echo substr($parts[0], 1) . " -- " . substr($parts[1], 1) ?> </h4>
+                <h4> <?php echo substr($parts[0], 1) . " -- " . htmlspecialchars(substr($parts[1], 1)) ?> </h4>
                 <a href="<?php echo "../uploads/" . $parts[2] ?>" target="_blank">
                     <img class="imgAdm" src="<?php echo "../uploads/" . $parts[2] ?>" alt="Фото користувача"> </a>
-                <?php echo $parts[2] ?>
+                <?php echo htmlspecialchars($parts[2]) ?>
                 <?php if ($key < $kilkist - 1) : ?>
                     <hr>
                 <?php endif; ?>

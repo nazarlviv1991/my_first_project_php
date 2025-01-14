@@ -17,7 +17,7 @@ function getUserLogin(): ?string
     $passwordFromCookie = $_COOKIE["password"] ?? "";
 
     if (checkAuth($loginFromCookie, $passwordFromCookie)) {
-        return $loginFromCookie;
+        return htmlspecialchars($loginFromCookie);
     }
     return null;
 }
